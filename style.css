@@ -1,0 +1,115 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #0a0a0a;
+  color: #eee;
+  font-family: 'VT323', monospace;
+}
+#menubar {
+  height: 24px;
+  background: #222;
+  display: flex;
+  align-items: center;
+  padding: 0 8px;
+  font-size: 14px;
+  user-select: none;
+}
+.menu {
+  position: relative;
+  margin-right: 12px;
+  cursor: pointer;
+}
+.menu-title {
+  padding: 0 4px;
+}
+.menu-content {
+  display: none;
+  position: absolute;
+  top: 24px;
+  left: 0;
+  background: #333;
+  border: 1px solid #555;
+  box-shadow: 2px 2px 0 #111;
+  z-index: 1000;
+}
+
+
+.menu-content {
+  display: none;
+  position: absolute;
+  background: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.menu-content.open { display: block; }
+.menu-item.selected { background: #0078d7; color: #fff; }
+.menu-item.disabled { color: #999; cursor: default; }
+
+
+
+.menu-item {
+  padding: 4px 12px;
+  white-space: nowrap;
+}
+.menu-item:hover {
+  background: #444;
+}
+#desktop {
+  position: absolute;
+  top: 24px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 80px);
+  grid-auto-rows: 100px;
+  gap: 10px;
+  padding: 20px;
+}
+.icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+.icon span.label {
+  margin-top: 5px;
+  font-size: 12px;
+}
+.window {
+  position: absolute;
+  top: 60px;
+  left: 60px;
+  width: 300px;
+  height: 200px;
+  background: #222;
+  border: 2px solid #888;
+  box-shadow: 4px 4px 0 #555;
+  overflow: hidden;
+}
+.window .titlebar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #444;
+  padding: 4px;
+  font-size: 14px;
+  cursor: move;
+}
+.window .titlebar .controls {
+  display: flex;
+  gap: 4px;
+}
+.window .titlebar .controls .close-btn {
+  width: 12px;
+  height: 12px;
+  background: #f55;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.window .content {
+  padding: 8px;
+  font-size: 14px;
+  height: calc(100% - 28px);
+  overflow: auto;
+}
